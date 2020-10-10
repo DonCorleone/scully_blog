@@ -9,6 +9,11 @@ const routes: Routes = [
     component: BlogComponent,
   },
   {
+    path: '',
+    loadChildren: () => import('../blog-root/blog-root.module')
+      .then(m => m.BlogRootModule)
+    },
+  {
     path: '**',
     component: BlogComponent,
   }
